@@ -8,7 +8,7 @@ module.exports = async (req: any, res: any, next: any) => {
     const tokenData:any = jwt.verify(token, config.secret);
     const uid = new ObjectId(tokenData.user.user_id);
     const data = await DB
-        .collection('Users').find({ userId: uid })
+        .collection('Tasks').find({ userId: uid })
         .toArray();
     if (data) {
         return res.status(200).json({

@@ -37,7 +37,6 @@ module.exports = async (req: any, res: any, next: any) => {
                         {
                             user: {
                                 user_id: user[0]._id,
-                                userId: user[0].id,
                                 email: user[0].email,
                             },
                         },

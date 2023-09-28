@@ -22,11 +22,11 @@ module.exports = async (req: any, res: any, result: any) => {
             value.createdAt = new Date()
             value.updatedAt = new Date()
             value.userId = uid
-            const user = await DB.collection('Tasks').insertOne(value)
+            const task = await DB.collection('Tasks').insertOne(value)
             return res.status(400).json({
                 status: true,
                 message: 'Record added',
-                data: user
+                data: task
             })
         } else {
             return res.status(400).json({
